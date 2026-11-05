@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM — Ćwiczenia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="hero wrap">
+    <h1>CRM <span>ćwiczeń</span></h1>
+    <p>Dodawaj, edytuj i usuwaj ćwiczenia. Zmiany zapisują się w <code>docs/data/exercises.json</code> — potem zrób commit i push.</p>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Szukaj…" aria-label="Szukaj">
+      <button class="btn" id="new" type="button">+ Nowe ćwiczenie</button>
+    </div>
+
+    <div class="crm-layout">
+      <div class="list" id="list"></div>
+
+      <aside class="panel" id="panel">
+        <h2 id="formTitle">Nowe ćwiczenie</h2>
+        <form id="form" autocomplete="off">
+          <div class="field">
+            <label for="name">Nazwa *</label>
+            <input type="text" id="name" required maxlength="120">
+          </div>
+          <div class="field">
+            <label for="description">Opis</label>
+            <textarea id="description"></textarea>
+          </div>
+          <div class="field">
+            <label for="tags">Tagi (po przecinku)</label>
+            <input type="text" id="tags" list="tagSuggestions" placeholder="np. plecy, hantle, początkujący">
+            <datalist id="tagSuggestions"></datalist>
+            <div class="tags" id="tagPicker"></div>
+          </div>
+          <div class="field" id="gifField">
+            <label for="gif">GIF</label>
+            <div class="gif-preview" id="gifPreview" hidden><img alt=""></div>
+            <input type="file" id="gif" accept="image/gif">
+            <p class="hint" id="gifHint">Najpierw zapisz ćwiczenie, potem możesz dodać GIF.</p>
+            <div class="row"><button class="btn danger small" id="gifRemove" type="button" hidden>Usuń GIF</button></div>
+          </div>
+          <div class="row">
+            <button class="btn" type="submit" id="save">Zapisz</button>
+            <button class="btn ghost" type="button" id="cancel">Wyczyść</button>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

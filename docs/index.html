@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ćwiczenia</title>
+  <meta name="description" content="Katalog ćwiczeń z filtrowaniem i sortowaniem.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="banner">
+    <h1><img src="img/page_header.png" alt="Baza ćwiczeń z opisami"></h1>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Szukaj ćwiczenia…" aria-label="Szukaj">
+      <select id="sort" aria-label="Sortowanie">
+        <option value="name-asc">Nazwa A–Z</option>
+        <option value="name-desc">Nazwa Z–A</option>
+        <option value="new">Najnowsze</option>
+        <option value="old">Najstarsze</option>
+      </select>
+    </div>
+    <div class="tags" id="tags" aria-label="Filtr tagów"></div>
+    <div class="meta" id="meta"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="disclaimer" id="disclaimer"></p>
+      <p class="footer-links" id="footerLinks"></p>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

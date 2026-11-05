@@ -1,0 +1,11 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statyczna strona z ćwiczeniami + lokalny panel CRM",
+  "scripts": {
+    "crm": "node crm/server.js",
+    "site": "node crm/server.js --site-only"
+  },
+  "engines": { "node": ">=18" }
+}

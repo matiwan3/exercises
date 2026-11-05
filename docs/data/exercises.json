@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "exercises": [
+    {
+      "id": "przykladowe-cwiczenie",
+      "name": "Brzuszek",
+      "description": "Wpis demonstracyjny. Usuń go w panelu CRM i dodaj własne ćwiczenia.",
+      "tags": [
+        "plecy",
+        "biceps"
+      ],
+      "gif": "przykladowe-cwiczenie-1793885164353.gif",
+      "createdAt": "2026-11-05T00:00:00.000Z",
+      "updatedAt": "2026-11-05T13:26:08.477Z"
+    },
+    {
+      "id": "muscle-up",
+      "name": "Muscle up",
+      "description": "Podciagniecie z wypychem angazujace miesnie szerokie grzbietu, tricepsy, bicepsy,plecy,core",
+      "tags": [
+        "core",
+        "biceps",
+        "plecy"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-05T13:07:47.909Z",
+      "updatedAt": "2026-11-05T13:07:47.909Z"
+    }
+  ]
+}
