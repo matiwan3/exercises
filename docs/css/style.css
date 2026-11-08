@@ -1,6 +1,6 @@
 /* ===== Tokeny marki — JEDYNE miejsce z kolorami i fontami (strona + CRM) ===== */
 :root {
-  --bg: #ffffff;
+  --bg: #f0f0f0; /* lekko szare tło strony */
   --surface: #ffffff;
   --surface-2: #efebe3;
   --card: #d9d9d9; /* szary kontener ćwiczenia */
