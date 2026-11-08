@@ -35,7 +35,7 @@ CRM (lokalny panel)  →  lekka baza (pliki w gicie)  →  statyczna strona (Git
 - Czyta `data/exercises.json` w przeglądarce — bez backendu.
 - Wyświetla listę ćwiczeń z GIF-ami, **wyszukiwaniem, filtrowaniem po tagach (AND) i sortowaniem** (nazwa A–Z/Z–A, najnowsze/najstarsze).
 - Wygląd: **jasny motyw** („premium”), dopasowany do nagłówka: kremowe tło, czarny tekst, koralowy akcent (`#ff4d55`), font nagłówków Anton.
-- Ćwiczenia wyświetlane jako kontenery na całą szerokość, jeden pod drugim: beżowe tło (`--card`), po lewej GIF (białe pole), po prawej pogrubiona nazwa, opis wyjustowany i kolorowe tagi (czarny tekst).
+- Ćwiczenia wyświetlane jako kontenery na całą szerokość, jeden pod drugim: szare tło (`--card`, #d9d9d9), po lewej GIF (białe pole), po prawej pogrubiona nazwa, opis wyjustowany i kolorowe tagi (czarny tekst).
 - Kolory tagów: paleta `--tag-0..5` w CSS; kolor wybierany stabilnie po haszu nazwy tagu (`tagColor` w JS), więc ten sam tag ma zawsze ten sam kolor na stronie i w CRM.
 - Nagłówek strony to grafika `docs/img/page_header.png` (przezroczysta, czarny napis) wprost na jasnym tle (`.banner`). Grafiki muszą leżeć w `docs/`, inaczej Pages ich nie opublikuje.
 - **Ujednolicone kolory i fonty:** wszystkie w tokenach CSS na górze `docs/css/style.css` (`--accent`, `--font-display`, …). Strona i CRM używają tego samego pliku — nie wpisuj kolorów/fontów gdzie indziej.

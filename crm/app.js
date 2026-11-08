@@ -8,7 +8,9 @@ const T = {
   editTitle: 'Edycja ćwiczenia',
   empty: 'Brak ćwiczeń.',
   noGif: 'brak GIF-a',
-  hintNew: 'Najpierw zapisz ćwiczenie, potem możesz dodać GIF.',
+  hintNew: 'Tylko 1 plik GIF (max 15 MB). Zostanie wgrany po kliknięciu „Zapisz”.',
+  gifPending: 'GIF zostanie wgrany po zapisaniu ćwiczenia',
+  gifUploadFailed: 'Ćwiczenie zapisane, ale GIF się nie wgrał: ',
   hintEdit: 'Tylko 1 plik GIF (max 15 MB). Wybranie pliku wgrywa go od razu i zastępuje poprzedni.',
   offline: 'Serwer CRM nie odpowiada — uruchom ponownie: npm run crm',
   gifOnly: 'Dozwolony jest tylko format GIF',
@@ -131,7 +133,6 @@ function renderForm() {
   $('description').value = e ? e.description : '';
   $('tags').value = e ? e.tags.join(', ') : '';
   $('gif').value = '';
-  $('gif').disabled = !e;
   $('gifHint').textContent = e ? T.hintEdit : T.hintNew;
   $('gifPreview').hidden = !(e && e.gif);
   if (e && e.gif) $('gifPreview').firstElementChild.src = `/gifs/${e.gif}`;
@@ -169,12 +170,22 @@ $('form').addEventListener('submit', async (ev) => {
   const body = { name: $('name').value, description: $('description').value, tags: parseTags($('tags').value) };
   try {
     const e = current();
-    const saved = e ? await call('PUT', `/api/exercises/${e.id}`, body) : await call('POST', '/api/exercises', body);
+    const pendingGif = e ? null : $('gif').files[0]; // przy nowym ćwiczeniu GIF czeka na zapis
+    let saved = e ? await call('PUT', `/api/exercises/${e.id}`, body) : await call('POST', '/api/exercises', body);
     upsertLocal(saved);
     state.selected = saved.id;
+    let gifError = null;
+    if (pendingGif) {
+      try {
+        saved = await call('PUT', `/api/exercises/${saved.id}/gif`, pendingGif, true);
+        upsertLocal(saved);
+      } catch (err) {
+        gifError = err.message;
+      }
+    }
     renderList();
     renderForm();
-    toast(T.saved);
+    gifError ? toast(T.gifUploadFailed + gifError, true) : toast(T.saved);
   } catch (err) {
     toast(err.message, true);
   }
@@ -183,10 +194,14 @@ $('form').addEventListener('submit', async (ev) => {
 $('gif').addEventListener('change', async (ev) => {
   const file = ev.target.files[0];
   const e = current();
-  if (!file || !e) return;
+  if (!file) return;
   if (file.type !== 'image/gif' && !/\.gif$/i.test(file.name)) {
     toast(T.gifOnly, true);
     ev.target.value = '';
+    return;
+  }
+  if (!e) {
+    toast(T.gifPending); // plik zostaje w polu i wgra się przy „Zapisz”
     return;
   }
   try {
