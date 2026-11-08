@@ -9,6 +9,7 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const DOCS = path.join(ROOT, 'docs');
 const DB_FILE = path.join(DOCS, 'data', 'exercises.json');
+const TAGS_FILE = path.join(DOCS, 'data', 'tags.json');
 const GIF_DIR = path.join(DOCS, 'gifs');
 const CRM_DIR = __dirname;
 const HOST = '127.0.0.1'; // tylko lokalnie
@@ -41,6 +42,40 @@ async function writeDb(db) {
   await fs.rename(tmp, DB_FILE);
 }
 
+// ---------- słownik tagów (tłumaczenie EN + kolor) ----------
+const PALETTE_SIZE = 13; // musi zgadzać się z --tag-0..12 w docs/css/style.css
+
+async function readTags() {
+  try {
+    return JSON.parse(await fs.readFile(TAGS_FILE, 'utf8'));
+  } catch (e) {
+    if (e.code === 'ENOENT') return { version: 1, tags: {} };
+    throw e;
+  }
+}
+
+async function writeTags(t) {
+  const tmp = TAGS_FILE + '.tmp';
+  await fs.writeFile(tmp, JSON.stringify(t, null, 2) + '\n');
+  await fs.rename(tmp, TAGS_FILE);
+}
+
+// każdy nowy tag dostaje najmniejszy jeszcze nieużyty kolor (potem cyklicznie)
+async function syncTags(tagList) {
+  const db = await readTags();
+  let changed = false;
+  for (const tag of tagList) {
+    if (db.tags[tag]) continue;
+    // najrzadziej używany kolor (przy wolnych kolorach: najmniejszy nieużyty)
+    const counts = Array(PALETTE_SIZE).fill(0);
+    for (const x of Object.values(db.tags)) if (Number.isInteger(x.color)) counts[x.color % PALETTE_SIZE]++;
+    const color = counts.indexOf(Math.min(...counts));
+    db.tags[tag] = { en: '', color };
+    changed = true;
+  }
+  if (changed) await writeTags(db);
+}
+
 function slugify(s) {
   return (
     s
@@ -71,6 +106,8 @@ function validate(body) {
     value: {
       name: name.slice(0, 120),
       description: String(body.description || '').trim().slice(0, 5000),
+      nameEn: String(body.nameEn || '').trim().slice(0, 120),
+      descriptionEn: String(body.descriptionEn || '').trim().slice(0, 5000),
       tags: cleanTags(body.tags).slice(0, 30),
     },
   };
@@ -133,6 +170,20 @@ async function removeGif(name) {
 async function api(req, res, url) {
   const parts = url.pathname.split('/').filter(Boolean); // ['api','exercises',id?,'gif'?]
   const [, resource, id, sub] = parts;
+  if (resource === 'tags' && !id) {
+    if (req.method === 'GET') return send(res, 200, await readTags());
+    if (req.method === 'PUT') {
+      // body: { en: { "<tag>": "tłumaczenie", ... } } — zmienia tylko tłumaczenia
+      const body = await readJson(req);
+      const db = await readTags();
+      for (const [tag, en] of Object.entries(body.en || {})) {
+        if (db.tags[tag]) db.tags[tag].en = String(en).trim().toLowerCase().slice(0, 60);
+      }
+      await writeTags(db);
+      return send(res, 200, db);
+    }
+    return send(res, 405, { error: 'Metoda niedozwolona' });
+  }
   if (resource !== 'exercises') return send(res, 404, { error: 'Nie znaleziono' });
   if (id && !SAFE_ID.test(id)) return send(res, 400, { error: 'Niepoprawne id' });
 
@@ -149,6 +200,7 @@ async function api(req, res, url) {
       const ex = { id: uniqueId(slugify(value.name), ids), ...value, gif: null, createdAt: now, updatedAt: now };
       db.exercises.push(ex);
       await writeDb(db);
+      await syncTags(ex.tags);
       return send(res, 201, ex);
     }
   } else if (!sub) {
@@ -160,6 +212,7 @@ async function api(req, res, url) {
       if (error) return send(res, 400, { error });
       db.exercises[i] = { ...db.exercises[i], ...value, updatedAt: new Date().toISOString() };
       await writeDb(db);
+      await syncTags(value.tags);
       return send(res, 200, db.exercises[i]);
     }
     if (req.method === 'DELETE') {

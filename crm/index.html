@@ -22,7 +22,15 @@
     </div>
 
     <div class="crm-layout">
-      <div class="list" id="list"></div>
+      <div>
+        <div class="list" id="list"></div>
+        <section class="panel flat" id="tagPanel">
+          <h2>Tagi — tłumaczenia EN</h2>
+          <p class="hint">Angielska wersja strony pokazuje te nazwy tagów. Kolor tagu jest stały i przydzielany automatycznie.</p>
+          <div id="tagRows"></div>
+          <button class="btn" id="saveTags" type="button">Zapisz tłumaczenia</button>
+        </section>
+      </div>
 
       <aside class="panel" id="panel">
         <h2 id="formTitle">Nowe ćwiczenie</h2>
@@ -34,6 +42,14 @@
           <div class="field">
             <label for="description">Opis</label>
             <textarea id="description"></textarea>
+          </div>
+          <div class="field">
+            <label for="nameEn">Nazwa (EN)</label>
+            <input type="text" id="nameEn" maxlength="120">
+          </div>
+          <div class="field">
+            <label for="descriptionEn">Opis (EN)</label>
+            <textarea id="descriptionEn"></textarea>
           </div>
           <div class="field">
             <label for="tags">Tagi (po przecinku)</label>

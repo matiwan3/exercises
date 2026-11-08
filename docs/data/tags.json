@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "tags": {
+    "kalistenika": {
+      "en": "calisthenics",
+      "color": 0
+    },
+    "siłownia": {
+      "en": "gym",
+      "color": 1
+    },
+    "rozciąganie": {
+      "en": "stretching",
+      "color": 2
+    },
+    "rozgrzewka": {
+      "en": "warm-up",
+      "color": 3
+    },
+    "barki": {
+      "en": "shoulders",
+      "color": 4
+    },
+    "plecy": {
+      "en": "back",
+      "color": 5
+    },
+    "klatka": {
+      "en": "chest",
+      "color": 6
+    },
+    "brzuch": {
+      "en": "abs",
+      "color": 7
+    },
+    "triceps": {
+      "en": "triceps",
+      "color": 8
+    },
+    "biceps": {
+      "en": "biceps",
+      "color": 9
+    },
+    "przedramiona": {
+      "en": "forearms",
+      "color": 10
+    },
+    "pośladki": {
+      "en": "glutes",
+      "color": 11
+    },
+    "uda": {
+      "en": "thighs",
+      "color": 12
+    }
+  }
+}

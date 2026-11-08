@@ -1,3 +1,6 @@
+// adres opublikowanej strony (GitHub Pages) — do generowania linków do ćwiczeń
+const SITE_URL = 'https://matiwan3.github.io/exercises/';
+
 const T = {
   saved: 'Zapisano',
   deleted: 'Usunięto',
@@ -14,15 +17,20 @@ const T = {
   hintEdit: 'Tylko 1 plik GIF (max 15 MB). Wybranie pliku wgrywa go od razu i zastępuje poprzedni.',
   offline: 'Serwer CRM nie odpowiada — uruchom ponownie: npm run crm',
   gifOnly: 'Dozwolony jest tylko format GIF',
+  tagsSaved: 'Tłumaczenia tagów zapisane',
+  noTranslation: 'brak tłumaczenia',
+  linkCopied: 'Link skopiowany: ',
 };
 
 const $ = (id) => document.getElementById(id);
-const state = { items: [], selected: null, q: '' };
+const state = { items: [], selected: null, q: '', tagDb: {} };
 
 function tagColor(t) {
+  const c = state.tagDb[t] && state.tagDb[t].color;
+  if (Number.isInteger(c)) return String(c);
   let h = 0;
   for (const ch of t) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  return String(h % 6);
+  return String(h % 13);
 }
 
 function el(tag, props = {}, ...children) {
@@ -57,10 +65,25 @@ async function call(method, url, body, raw = false) {
   return data;
 }
 
+async function loadTags() {
+  state.tagDb = (await call('GET', '/api/tags')).tags || {};
+}
+
 async function load() {
   state.items = (await call('GET', '/api/exercises')).exercises;
+  await loadTags();
   renderList();
   renderTagSuggestions();
+  renderTagRows();
+}
+
+function renderTagRows() {
+  const rows = allTags().map((t) => {
+    const input = el('input', { type: 'text', value: (state.tagDb[t] && state.tagDb[t].en) || '', placeholder: T.noTranslation, maxLength: 60 });
+    input.dataset.tag = t;
+    return el('div', { className: 'tr-row' }, el('span', { className: 'tag static', textContent: t, dataset: { c: tagColor(t) } }), input);
+  });
+  $('tagRows').replaceChildren(...rows);
 }
 
 function current() {
@@ -113,10 +136,11 @@ function renderList() {
             'div',
             { className: 'item' + (e.id === state.selected ? ' selected' : '') },
             thumb,
-            el('div', {}, el('h3', { textContent: e.name }), tags),
+            el('div', {}, el('h3', { textContent: e.name }), el('p', { className: 'hint item-id', textContent: `#${e.id}` }), tags),
             el(
               'div',
               { className: 'actions' },
+              el('button', { className: 'btn ghost small', type: 'button', textContent: 'Link', title: 'Kopiuj link do ćwiczenia', onclick: () => copyLink(e) }),
               el('button', { className: 'btn ghost small', type: 'button', textContent: 'Edytuj', onclick: () => select(e.id) }),
               el('button', { className: 'btn danger small', type: 'button', textContent: 'Usuń', onclick: () => remove(e) })
             )
@@ -126,11 +150,23 @@ function renderList() {
   );
 }
 
+async function copyLink(e) {
+  const url = `${SITE_URL}#${e.id}`;
+  try {
+    await navigator.clipboard.writeText(url);
+    toast(T.linkCopied + url);
+  } catch {
+    window.prompt('Link do ćwiczenia:', url);
+  }
+}
+
 function renderForm() {
   const e = current();
   $('formTitle').textContent = e ? T.editTitle : T.newTitle;
   $('name').value = e ? e.name : '';
   $('description').value = e ? e.description : '';
+  $('nameEn').value = e ? e.nameEn || '' : '';
+  $('descriptionEn').value = e ? e.descriptionEn || '' : '';
   $('tags').value = e ? e.tags.join(', ') : '';
   $('gif').value = '';
   $('gifHint').textContent = e ? T.hintEdit : T.hintNew;
@@ -167,7 +203,13 @@ function upsertLocal(ex) {
 
 $('form').addEventListener('submit', async (ev) => {
   ev.preventDefault();
-  const body = { name: $('name').value, description: $('description').value, tags: parseTags($('tags').value) };
+  const body = {
+    name: $('name').value,
+    description: $('description').value,
+    nameEn: $('nameEn').value,
+    descriptionEn: $('descriptionEn').value,
+    tags: parseTags($('tags').value),
+  };
   try {
     const e = current();
     const pendingGif = e ? null : $('gif').files[0]; // przy nowym ćwiczeniu GIF czeka na zapis
@@ -183,6 +225,8 @@ $('form').addEventListener('submit', async (ev) => {
         gifError = err.message;
       }
     }
+    await loadTags();
+    renderTagRows();
     renderList();
     renderForm();
     gifError ? toast(T.gifUploadFailed + gifError, true) : toast(T.saved);
@@ -224,6 +268,18 @@ $('gifRemove').addEventListener('click', async () => {
     renderList();
     renderForm();
     toast(T.gifRemoved);
+  } catch (err) {
+    toast(err.message, true);
+  }
+});
+
+$('saveTags').addEventListener('click', async () => {
+  const en = {};
+  for (const input of $('tagRows').querySelectorAll('input')) en[input.dataset.tag] = input.value;
+  try {
+    state.tagDb = (await call('PUT', '/api/tags', { en })).tags;
+    renderTagRows();
+    toast(T.tagsSaved);
   } catch (err) {
     toast(err.message, true);
   }

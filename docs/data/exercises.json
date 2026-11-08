@@ -1,4 +1,493 @@
 {
   "version": 1,
-  "exercises": []
+  "exercises": [
+    {
+      "id": "krazenia-ramion-i-nadgarstkow",
+      "name": "Krążenia ramion i nadgarstków",
+      "nameEn": "Arm Circles & Wrist Circles",
+      "description": "Wykonuj płynne, kontrolowane krążenia wyprostowanych ramion w przód i w tył, stopniowo zwiększając zakres ruchu. Następnie spleć dłonie i wykonuj ósemki oraz rotacje nadgarstków w obu kierunkach. Ćwiczenie przygotowuje stawy i maź stawową do obciążeń.",
+      "descriptionEn": "Perform smooth, controlled circles with straight arms forward and backward, gradually increasing the range of motion. Then clasp your hands and perform figure-eights and wrist rotations in both directions. This exercise prepares the joints and synovial fluid for load.",
+      "tags": [
+        "rozgrzewka",
+        "barki",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:31.000Z",
+      "updatedAt": "2026-11-08T17:37:31.000Z"
+    },
+    {
+      "id": "odciaganie-gumy-band-pull-aparts",
+      "name": "Odciąganie gumy (Band Pull-Aparts)",
+      "nameEn": "Band Pull-Arounds / Band Pull-Aparts",
+      "description": "Chwyć gumę nachwytem na szerokość barków z ramionami wyprostowanymi przed klatką piersiową. Rozciągaj gumę na boki do momentu dotknięcia klatki piersiowej, mocno ściągając łopatki do siebie. Kontroluj ruch powrotny, utrzymując ciągłe napięcie gumy i stabilny tułów.",
+      "descriptionEn": "Hold the band with an overhand grip at shoulder width, arms extended in front of your chest. Pull the band apart to the sides until it touches your chest, squeezing your shoulder blades together hard. Control the return, keeping constant tension on the band and a stable torso.",
+      "tags": [
+        "rozgrzewka",
+        "plecy",
+        "barki"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:32.000Z",
+      "updatedAt": "2026-11-08T17:37:32.000Z"
+    },
+    {
+      "id": "wiszenie-w-chwycie-glebokim-false-grip",
+      "name": "Wiszenie w chwycie głębokim (False Grip)",
+      "nameEn": "False Grip Hanging",
+      "description": "Załóż nadgarstki głęboko na drążek tak, aby podstawa dłoni spoczywała na jego górnej powierzchni. Zawiśnij z wyprostowanymi lub lekko ugiętymi ramionami, utrzymując aktywne łopatki i mocne zgięcie w nadgarstkach. Utrzymuj pozycję przez określony czas, budując siłę chwytu kluczową do przejścia w Muscle Up.",
+      "descriptionEn": "Hook your wrists deep over the bar so that the base of your palm rests on its top surface. Hang with straight or slightly bent arms, keeping your shoulder blades active and your wrists strongly flexed. Hold the position for a set time, building the grip strength essential for the transition into a Muscle Up.",
+      "tags": [
+        "kalistenika",
+        "przedramiona",
+        "plecy",
+        "barki"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:33.000Z",
+      "updatedAt": "2026-11-08T17:37:33.000Z"
+    },
+    {
+      "id": "dynamiczne-wysokie-podciaganie",
+      "name": "Dynamiczne wysokie podciąganie",
+      "nameEn": "Explosive High Pull-Ups",
+      "description": "Rozpocznij w zwisie nachwytem, a następnie wykonaj dynamiczny ruch pociągnięcia w dół i w tył, dążąc do wyciągnięcia klatki lub brzucha do wysokości drążka. Prowadź łokcie agresywnie w dół i do tyłu, lekko odchylając tułów. W szczytowym punkcie zachowaj maksymalną dynamikę, po czym płynnie i bezpiecznie opuść się do pozycji wyjściowej.",
+      "descriptionEn": "Start in an overhand hang, then pull explosively down and back, aiming to bring your chest or abs up to bar height. Drive your elbows aggressively down and back while leaning your torso slightly back. At the top keep maximum dynamics, then lower smoothly and safely to the starting position.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "biceps",
+        "klatka",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:34.000Z",
+      "updatedAt": "2026-11-08T17:37:34.000Z"
+    },
+    {
+      "id": "pompki-na-drazku-prostym-bar-dips",
+      "name": "Pompki na drążku prostym (Bar Dips)",
+      "nameEn": "Bar Dips",
+      "description": "Rozpocznij w pełnym podporze na drążku z wyprostowanymi ramionami i tułowiem lekko pochylonym do przodu. Zginaj ramiona w łokciach, opuszczając klatkę piersiową tuż nad drążek i pilnując, by łokcie nie uciekały nadmiernie na boki. Wypchnij się dynamicznie w górę, w pełni prostując ramiona i stabilizując korpus.",
+      "descriptionEn": "Start in a full support on the bar with arms straight and your torso leaning slightly forward. Bend your elbows, lowering your chest just above the bar and making sure your elbows don't flare out excessively. Press up explosively, fully extending your arms and stabilizing your core.",
+      "tags": [
+        "kalistenika",
+        "triceps",
+        "klatka",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:35.000Z",
+      "updatedAt": "2026-11-08T17:37:35.000Z"
+    },
+    {
+      "id": "negatywne-muscle-upy-na-drazku",
+      "name": "Negatywne muscle upy na drążku",
+      "nameEn": "Bar Negative Muscle Ups",
+      "description": "Zacznij od pozycji wyprostowanej w podporze nad drążkiem (górna faza dipa). Płynnie i bardzo powoli opuszczaj klatkę do drążka, a następnie ostrożnie przetocz dłonie wokół drążka przechodząc przez fazę tranzycji w dół. Wykonuj powolne, kontrolowane opuszczanie przez 3-5 sekund aż do pełnego zwisu.",
+      "descriptionEn": "Start in a straight-arm support above the bar (the top phase of a dip). Smoothly and very slowly lower your chest to the bar, then carefully roll your hands around the bar, passing through the transition phase downward. Lower slowly and under control for 3–5 seconds until you reach a full hang.",
+      "tags": [
+        "kalistenika",
+        "klatka",
+        "plecy",
+        "triceps",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:36.000Z",
+      "updatedAt": "2026-11-08T17:37:36.000Z"
+    },
+    {
+      "id": "muscle-upy-z-wyskoku",
+      "name": "Muscle upy z wyskoku",
+      "nameEn": "Jumping Muscle Ups",
+      "description": "Ustaw podest pod drążkiem tak, aby stojąc mieć drążek na wysokości klatki lub szyi. Wybij się dynamicznie z nóg, jednocześnie pociągając ramionami i energicznie przerzucając tułów i łokcie nad drążek. Zakończ ruch wypchnięciem z dipa do pełnego wyprostu ramion nad drążkiem.",
+      "descriptionEn": "Place a platform under the bar so that, standing, the bar is at chest or neck height. Jump off your legs explosively while pulling with your arms and powerfully throwing your torso and elbows over the bar. Finish by pressing out of the dip to full arm extension above the bar.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "klatka",
+        "triceps",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:37.000Z",
+      "updatedAt": "2026-11-08T17:37:37.000Z"
+    },
+    {
+      "id": "rozciaganie-klatki-na-drazku",
+      "name": "Rozciąganie klatki na drążku",
+      "nameEn": "Bar Chest Stretch",
+      "description": "Stań tyłem lub bokiem do drążka, chwyć go dłońmi za plecami na wysokości bioder lub klatki. Zrób krok w przód i delikatnie opuść tułów lub zrotuj ciało w przeciwnym kierunku, otwierając klatkę. Utrzymuj pozycję przez 20-30 sekund na stronę, oddychając głęboko i nie pogłębiając bólu.",
+      "descriptionEn": "Stand with your back or side to the bar and grip it behind you at hip or chest height. Step forward and gently lower your torso or rotate your body in the opposite direction, opening the chest. Hold for 20–30 seconds per side, breathing deeply and not pushing into pain.",
+      "tags": [
+        "rozciąganie",
+        "klatka",
+        "barki",
+        "biceps"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:38.000Z",
+      "updatedAt": "2026-11-08T17:37:38.000Z"
+    },
+    {
+      "id": "rozciaganie-tricepsa-i-najszerszego-grzbietu",
+      "name": "Rozciąganie tricepsa i najszerszego grzbietu",
+      "nameEn": "Overhead Triceps & Lat Stretch",
+      "description": "Unieś jedną rękę pionowo w górę, zegnij ją w łokciu kierując dłoń w dół między łopatki. Drugą ręką delikatnie przytrzymaj łokieć i popchnij go lekko w dół oraz ku środkowi ciała, dodając delikatny skłon boczny tułowia. Wytrzymaj 20-30 sekund w stabilnej pozycji, po czym zmień stronę.",
+      "descriptionEn": "Raise one arm straight up and bend it at the elbow so your hand drops between your shoulder blades. With the other hand gently hold the elbow and push it slightly down and toward the midline, adding a gentle side bend of the torso. Hold for 20–30 seconds in a stable position, then switch sides.",
+      "tags": [
+        "rozciąganie",
+        "triceps",
+        "plecy"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:39.000Z",
+      "updatedAt": "2026-11-08T17:37:39.000Z"
+    },
+    {
+      "id": "rozciaganie-zginaczy-i-prostownikow-nadgarstkow",
+      "name": "Rozciąganie zginaczy i prostowników nadgarstków",
+      "nameEn": "Wrist Extension & Flexion Stretch",
+      "description": "W klęku podpartym oprzyj dłonie o podłogę palcami skierowanymi w stronę kolan, delikatnie cofając biodra w tył (rozciąganie zginaczy). Następnie obróć dłonie grzbietem do maty z palcami skierowanymi ku sobie i delikatnie wywieraj nacisk (rozciąganie prostowników). Utrzymuj każdą pozycję przez 15-20 sekund bez szarpania.",
+      "descriptionEn": "From a quadruped position, place your palms on the floor with fingers pointing toward your knees, gently shifting your hips back (flexor stretch). Then turn your hands so the backs face the mat with fingers pointing toward you and apply gentle pressure (extensor stretch). Hold each position for 15–20 seconds without bouncing.",
+      "tags": [
+        "rozciąganie",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:40.000Z",
+      "updatedAt": "2026-11-08T17:37:40.000Z"
+    },
+    {
+      "id": "pompki-przy-scianie",
+      "name": "Pompki przy ścianie",
+      "nameEn": "Wall Push-Ups",
+      "description": "Stań w odległości około metra od ściany i oprzyj dłonie na szerokość barków na wysokości klatki piersiowej. Utrzymuj ciało w linii prostej i zginaj łokcie pod kątem 45 stopni, zbliżając klatkę do ściany. Wypchnij się równomiernie do wyjściowej pozycji, dbając o stałe napięcie brzucha i pośladków.",
+      "descriptionEn": "Stand about a meter from the wall and place your hands shoulder-width apart at chest height. Keep your body in a straight line and bend your elbows at a 45-degree angle, bringing your chest toward the wall. Push back evenly to the start, keeping constant tension in your abs and glutes.",
+      "tags": [
+        "kalistenika",
+        "klatka",
+        "barki",
+        "triceps",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:41.000Z",
+      "updatedAt": "2026-11-08T17:37:41.000Z"
+    },
+    {
+      "id": "podpor-przodem-na-wyprostowanych-rekach",
+      "name": "Podpór przodem na wyprostowanych rękach",
+      "nameEn": "Support Hold",
+      "description": "Przyjmij pozycję górnej fazy pompki z dłońmi bezpośrednio pod barkami i stopami złączonymi. Wypchnij łopatki w górę (protrakcja), zepnij mocno pośladki, podwiń miednicę i napnij brzuch tworząc linię prostą. Utrzymuj statyczną pozycję przez założony czas, kontrolując spokojny oddech.",
+      "descriptionEn": "Take the top position of a push-up with your hands directly under your shoulders and your feet together. Push your shoulder blades up (protraction), squeeze your glutes hard, tuck your pelvis and brace your abs to form a straight line. Hold the static position for the set time, breathing calmly.",
+      "tags": [
+        "kalistenika",
+        "brzuch",
+        "barki",
+        "triceps"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:42.000Z",
+      "updatedAt": "2026-11-08T17:37:42.000Z"
+    },
+    {
+      "id": "pompki-na-podwyzszeniu",
+      "name": "Pompki na podwyższeniu",
+      "nameEn": "Incline Push-Ups",
+      "description": "Oprzyj dłonie na stabilnym podwyższeniu na szerokość barków, ustawiając stopy na podłodze. Utrzymuj idealnie wyprostowaną sylwetkę od pięt po czubek głowy i opuszczaj klatkę w kierunku krawędzi podwyższenia. Wypchnij się dynamicznie do pełnego wyprostu ramion, nie pozwalając na zapadanie się bioder.",
+      "descriptionEn": "Place your hands on a stable elevated surface at shoulder width, with your feet on the floor. Keep a perfectly straight body from heels to head and lower your chest toward the edge of the platform. Push up explosively to full arm extension, not letting your hips sag.",
+      "tags": [
+        "kalistenika",
+        "klatka",
+        "triceps",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:43.000Z",
+      "updatedAt": "2026-11-08T17:37:43.000Z"
+    },
+    {
+      "id": "deska-klasyczna-plank",
+      "name": "Deska klasyczna (Plank)",
+      "nameEn": "Plank",
+      "description": "Oprzyj się na przedramionach i palcach stóp, ustawiając łokcie bezpośrednio pod barkami. Zepnij mocno pośladki, podwiń miednicę pod siebie i wciągnij pępek ku kręgosłupowi, tworząc sztywną linię. Oddychaj równomiernie i unikaj wyginania odcinka lędźwiowego w dół oraz unoszenia bioder.",
+      "descriptionEn": "Rest on your forearms and toes with your elbows directly under your shoulders. Squeeze your glutes hard, tuck your pelvis and draw your navel toward your spine, creating a rigid line. Breathe evenly and avoid arching your lower back downward or raising your hips.",
+      "tags": [
+        "kalistenika",
+        "brzuch",
+        "pośladki",
+        "plecy"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:44.000Z",
+      "updatedAt": "2026-11-08T17:37:44.000Z"
+    },
+    {
+      "id": "pompki-na-kolanach",
+      "name": "Pompki na kolanach",
+      "nameEn": "Knee Push-Ups",
+      "description": "Przyjmij pozycję podporu opierając kolana na macie, z kolanami, biodrami i barkami w jednej linii. Zginaj ramiona w łokciach prowadząc je blisko tułowia pod kątem około 45 stopni, aż klatka znajdzie się tuż nad ziemią. Wypchnij ciało do góry, pilnując, aby biodra nie zostawały w tyle ani nie opadały przedwcześnie.",
+      "descriptionEn": "Take a support position with your knees on the mat, with knees, hips and shoulders in one line. Bend your elbows, keeping them close to your torso at about 45 degrees, until your chest is just above the floor. Push your body up, making sure your hips neither lag behind nor drop too early.",
+      "tags": [
+        "kalistenika",
+        "klatka",
+        "triceps",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:45.000Z",
+      "updatedAt": "2026-11-08T17:37:45.000Z"
+    },
+    {
+      "id": "pozycja-dziecka-balasana",
+      "name": "Pozycja dziecka (Balasana)",
+      "nameEn": "Child's Pose",
+      "description": "Uklęknij na macie, złącz duże palce stóp i rozszerz kolana na szerokość bioder. Usiądź pośladkami na piętach, wyciągnij wyprostowane ramiona daleko przed siebie na podłodze i oprzyj czoło o matę. Oddychaj głęboko do brzucha i dolnych żeber, pozwalając kręgosłupowi na swobodne wydłużenie i odprężenie.",
+      "descriptionEn": "Kneel on the mat, bring your big toes together and spread your knees to hip width. Sit your glutes back on your heels, stretch your straight arms far in front of you on the floor and rest your forehead on the mat. Breathe deeply into your belly and lower ribs, letting your spine lengthen and relax freely.",
+      "tags": [
+        "rozciąganie",
+        "plecy",
+        "pośladki",
+        "uda"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:46.000Z",
+      "updatedAt": "2026-11-08T17:37:46.000Z"
+    },
+    {
+      "id": "pozycja-kobry-bhujangasana",
+      "name": "Pozycja kobry (Bhujangasana)",
+      "nameEn": "Cobra Pose",
+      "description": "Połóż się na brzuchu z nogami wyprostowanymi i dłońmi ułożonymi płasko pod barkami. Wciskając miednicę i grzbiety stóp w podłoże, unieś klatkę piersiową w górę siłą pleców oraz delikatnym odepchnięciem dłońmi. Opuść barki daleko od uszu, ściągnij łopatki i patrz przed siebie, nie forsując odcinka lędźwiowego.",
+      "descriptionEn": "Lie on your stomach with your legs straight and your palms flat under your shoulders. Pressing your pelvis and the tops of your feet into the floor, lift your chest using your back strength and a gentle push of your hands. Keep your shoulders away from your ears, draw your shoulder blades together and look ahead, without forcing your lower back.",
+      "tags": [
+        "rozciąganie",
+        "brzuch",
+        "klatka",
+        "plecy",
+        "uda"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:47.000Z",
+      "updatedAt": "2026-11-08T17:37:47.000Z"
+    },
+    {
+      "id": "pompka-klasyczna",
+      "name": "Pompka klasyczna",
+      "nameEn": "Classic Push-Up",
+      "description": "Przyjmij pozycję podporu przodem z dłońmi rozstawionymi nieco szerzej niż szerokość barków i napiętym brzuchem. Opuszczaj ciało w jednej linii, zginając łokcie pod kątem 45 stopni do tułowia, aż klatka dotknie lub zbliży się do podłogi. Wypchnij się energicznie do góry, nie dopuszczając do zapadania się bioder w dół.",
+      "descriptionEn": "Take a front support position with your hands slightly wider than shoulder width and your abs braced. Lower your body in one line, bending your elbows at a 45-degree angle to your torso until your chest touches or nears the floor. Push up energetically, not letting your hips sag.",
+      "tags": [
+        "kalistenika",
+        "klatka",
+        "triceps",
+        "barki",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:48.000Z",
+      "updatedAt": "2026-11-08T17:37:48.000Z"
+    },
+    {
+      "id": "podciaganie-nachwytem",
+      "name": "Podciąganie nachwytem",
+      "nameEn": "Pull-Up",
+      "description": "Zawiśnij nachwytem na drążku ze stopami złączonymi i dłońmi nieco szerzej niż barki. Rozpocznij ruch od aktywnego ściągnięcia łopatek w dół i do kręgosłupa, a następnie pociągnij ciało ku górze. Unoś się do momentu, gdy broda przekroczy drążek, po czym powoli i pod pełną kontrolą opuść się do pełnego wyprostu ramion.",
+      "descriptionEn": "Hang from the bar with an overhand grip, feet together and hands slightly wider than your shoulders. Start the movement by actively pulling your shoulder blades down and toward your spine, then pull your body upward. Rise until your chin clears the bar, then lower yourself slowly and under full control to full arm extension.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "biceps",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:49.000Z",
+      "updatedAt": "2026-11-08T17:37:49.000Z"
+    },
+    {
+      "id": "podciaganie-podchwytem",
+      "name": "Podciąganie podchwytem",
+      "nameEn": "Chin-Up",
+      "description": "Chwyć drążek podchwytem na szerokość barków, z pełnym wyprostem ramion w zwisie. Ściągnij łopatki i ugnij łokcie prowadząc je w dół i blisko tułowia, dynamicznie podciągając ciało ku górze. Gdy podbródek znajdzie się wyraźnie nad drążkiem, kontrolowanym ruchem opuść się z powrotem na sam dół.",
+      "descriptionEn": "Grab the bar with an underhand grip at shoulder width, in a hang with fully extended arms. Pull your shoulder blades down and bend your elbows, driving them down and close to your torso, pulling your body up dynamically. When your chin is clearly above the bar, lower yourself back to the bottom with control.",
+      "tags": [
+        "kalistenika",
+        "biceps",
+        "plecy",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:50.000Z",
+      "updatedAt": "2026-11-08T17:37:50.000Z"
+    },
+    {
+      "id": "pompki-w-pozycji-pike",
+      "name": "Pompki w pozycji Pike",
+      "nameEn": "Pike Push-Up",
+      "description": "Ustaw ciało w pozycji odwróconej litery V z biodrami wypchniętymi wysoko w górę i prostymi plecami. Zginaj ramiona w łokciach, przenosząc głowę delikatnie do przodu przed linię dłoni tak, by czubek głowy zbliżył się do ziemi w kształcie trójkąta. Wypchnij się mocno w górę i do tyłu, wracając do pozycji wyjściowej z głową schowaną między ramionami.",
+      "descriptionEn": "Set your body in an inverted V position with your hips lifted high and a straight back. Bend your elbows, moving your head slightly forward past the line of your hands so the top of your head approaches the floor in a triangle shape. Press hard up and back, returning to the start with your head tucked between your arms.",
+      "tags": [
+        "kalistenika",
+        "barki",
+        "triceps",
+        "klatka",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:51.000Z",
+      "updatedAt": "2026-11-08T17:37:51.000Z"
+    },
+    {
+      "id": "stanie-na-rekach-przy-scianie",
+      "name": "Stanie na rękach przy ścianie",
+      "nameEn": "Handstand Hold",
+      "description": "Oprzyj dłonie na podłodze kilkanaście centymetrów od ściany i wejdź po ścianie stopami lub wykonaj kontrolowany wymach. Wypychaj barki aktywnie w stronę uszu, napnij mocno pośladki, zepnij brzuch i obciągnij palce stóp. Utrzymuj całkowicie prostą sylwetkę bez wygięcia w odcinku lędźwiowym przez określony czas.",
+      "descriptionEn": "Place your hands on the floor a few inches from the wall and walk up the wall with your feet, or perform a controlled kick-up. Actively push your shoulders toward your ears, squeeze your glutes hard, brace your abs and point your toes. Maintain a completely straight body without arching your lower back for the set time.",
+      "tags": [
+        "kalistenika",
+        "barki",
+        "plecy",
+        "brzuch",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:52.000Z",
+      "updatedAt": "2026-11-08T17:37:52.000Z"
+    },
+    {
+      "id": "pompki-w-staniu-na-rekach-hspu",
+      "name": "Pompki w staniu na rękach (HSPU)",
+      "nameEn": "Handstand Push-Up (HSPU)",
+      "description": "Przyjmij pozycję stania na rękach przy ścianie z dłońmi rozstawionymi nieco szerzej niż barki. Powoli zginaj ramiona w łokciach, kontrolując opuszczanie głowy przed linię dłoni aż do delikatnego dotknięcia podłoża. Wypchnij się potężnym ruchem w górę do pełnego zablokowania łokci i aktywnego wypchnięcia barków.",
+      "descriptionEn": "Take a handstand position against the wall with your hands slightly wider than your shoulders. Slowly bend your elbows, controlling the lowering of your head in front of the line of your hands until it lightly touches the floor. Press up with a powerful movement to full elbow lockout and actively pushed-up shoulders.",
+      "tags": [
+        "kalistenika",
+        "barki",
+        "triceps",
+        "plecy",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:53.000Z",
+      "updatedAt": "2026-11-08T17:37:53.000Z"
+    },
+    {
+      "id": "hip-thrust-ze-sztanga",
+      "name": "Hip Thrust ze sztangą",
+      "nameEn": "Barbell Hip Thrust",
+      "description": "Oprzyj górną część pleców o krawędź ławki, a gryf sztangi z ochraniaczem umieść na biodrach w zgięciu miednicy. Ustaw stopy płasko na ziemi na szerokość barków i dynamicznie wypchnij biodra w górę, wbijając pięty w podłogę. W szczytowym punkcie zepnij maksymalnie pośladki, tworząc linię prostą od kolan do barków, po czym powoli opuść biodra.",
+      "descriptionEn": "Rest your upper back against the edge of a bench and place a padded barbell across your hips, in the crease of your pelvis. Set your feet flat on the floor at shoulder width and drive your hips up explosively, pressing your heels into the ground. At the top, squeeze your glutes maximally, forming a straight line from knees to shoulders, then slowly lower your hips.",
+      "tags": [
+        "siłownia",
+        "pośladki",
+        "uda",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:54.000Z",
+      "updatedAt": "2026-11-08T17:37:54.000Z"
+    },
+    {
+      "id": "przysiad-bulgarski-bss",
+      "name": "Przysiad bułgarski (BSS)",
+      "nameEn": "Bulgarian Split Squat (BSS)",
+      "description": "Stań w wykroku tyłem do ławeczki i oprzyj grzbiet jednej stopy na jej krawędzi. Obniżaj biodra pionowo w dół, zginając przednią nogę w kolanie do kąta około 90 stopni, zachowując tułów stabilny i lekko pochylony. Odepchnij się z całej przedniej stopy (ze szczególnym naciskiem na piętę) z powrotem w górę.",
+      "descriptionEn": "Stand in a lunge position facing away from a bench and rest the top of one foot on its edge. Lower your hips straight down, bending the front knee to about 90 degrees, keeping your torso stable and slightly leaning forward. Push through the whole front foot (with special emphasis on the heel) back up.",
+      "tags": [
+        "siłownia",
+        "uda",
+        "pośladki"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:55.000Z",
+      "updatedAt": "2026-11-08T17:37:55.000Z"
+    },
+    {
+      "id": "rumunski-martwy-ciag-rdl",
+      "name": "Rumuński martwy ciąg (RDL)",
+      "nameEn": "Romanian Deadlift (RDL)",
+      "description": "Stań ze stopami na szerokość bioder trzymając sztangę nachwytem przed udami. Przy lekko ugiętych kolanach wypychaj biodra daleko w tył, prowadząc gryf tuż przy nogach aż do wyczucia mocnego rozciągania w tyle ud. Ściśnij pośladki i pchnij biodra do przodu, wracając do pozycji wyprostowanej bez przeprostu w lędźwiach.",
+      "descriptionEn": "Stand with your feet hip-width apart, holding a barbell with an overhand grip in front of your thighs. With slightly bent knees, push your hips far back, guiding the bar close to your legs until you feel a strong stretch in the back of your thighs. Squeeze your glutes and drive your hips forward, returning to standing without hyperextending your lower back.",
+      "tags": [
+        "siłownia",
+        "uda",
+        "pośladki",
+        "plecy"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:56.000Z",
+      "updatedAt": "2026-11-08T17:37:56.000Z"
+    },
+    {
+      "id": "przysiad-ze-sztanga-na-plecach",
+      "name": "Przysiad ze sztangą na plecach",
+      "nameEn": "Barbell Back Squat",
+      "description": "Umieść gryf na mięśniach czworobocznych (high bar) lub grzebieniu łopatki (low bar) i zdejmij ze stojaka. Weź głęboki wdech do brzucha, napnij korpus i rozpocznij ruch od jednoczesnego zgięcia w biodrach i kolanach, schodząc poniżej linii kolan. Wstań dynamicznie, rozpychając kolana na zewnątrz i zachowując wyprostowany kręgosłup.",
+      "descriptionEn": "Place the bar on your trapezius muscles (high bar) or on the shelf of your shoulder blades (low bar) and unrack it. Take a deep breath into your belly, brace your core and start by bending at the hips and knees simultaneously, descending below knee level. Stand up explosively, pushing your knees outward and keeping your spine straight.",
+      "tags": [
+        "siłownia",
+        "uda",
+        "pośladki",
+        "plecy",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:57.000Z",
+      "updatedAt": "2026-11-08T17:37:57.000Z"
+    },
+    {
+      "id": "odwodzenie-nog-na-maszynie",
+      "name": "Odwodzenie nóg na maszynie",
+      "nameEn": "Seated Hip Abduction",
+      "description": "Usiądź stabilnie na maszynie z plecami przylegającymi do oparcia i zewnętrzną stroną kolan opartą o poduszki. Rozchylaj nogi na zewnątrz mocnym ruchem odwodzenia, skupiając się na pracy bocznej części pośladków. Przytrzymaj spięcie przez ułamek sekundy, po czym powoli i pod kontrolą pozwól maszynie wrócić do pozycji początkowej.",
+      "descriptionEn": "Sit stably on the machine with your back against the backrest and the outer sides of your knees against the pads. Push your legs outward in a strong abduction movement, focusing on the outer part of your glutes. Hold the contraction for a split second, then slowly and under control let the machine return to the starting position.",
+      "tags": [
+        "siłownia",
+        "pośladki",
+        "uda"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:58.000Z",
+      "updatedAt": "2026-11-08T17:37:58.000Z"
+    },
+    {
+      "id": "sciaganie-drazka-wyciagu-gornego",
+      "name": "Ściąganie drążka wyciągu górnego",
+      "nameEn": "Lat Pulldown",
+      "description": "Usiądź na siedzisku maszyny i zablokuj uda pod wałkami oporowymi, chwytając drążek nachwytem szerzej niż barki. Ściągnij łopatki w dół i przyciągaj drążek w kierunku górnej części klatki piersiowej, prowadząc łokcie w dół i lekko do tyłu. Kontrolowanym ruchem powróć w górę, pozwalając na pełne rozciągnięcie mięśni najszerszych grzbietu.",
+      "descriptionEn": "Sit on the machine seat and lock your thighs under the pads, gripping the bar with an overhand grip wider than your shoulders. Pull your shoulder blades down and pull the bar toward your upper chest, driving your elbows down and slightly back. Return upward in a controlled manner, allowing a full stretch of the latissimus muscles.",
+      "tags": [
+        "siłownia",
+        "plecy",
+        "biceps"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:37:59.000Z",
+      "updatedAt": "2026-11-08T17:37:59.000Z"
+    },
+    {
+      "id": "wyciskanie-hantli-nad-glowe",
+      "name": "Wyciskanie hantli nad głowę",
+      "nameEn": "Dumbbell Overhead Press",
+      "description": "Trzymaj hantle na wysokości barków z dłońmi skierowanymi do przodu lub w chwycie neutralnym. Zepnij brzuch oraz pośladki i wyciśnij hantle pionowo w górę nad głowę aż do niemal pełnego wyprostu łokci. Opuść hantle powoli i w pełnej kontroli do wysokości uszu/barków, utrzymując stabilny tułów.",
+      "descriptionEn": "Hold the dumbbells at shoulder height with your palms facing forward or in a neutral grip. Brace your abs and glutes and press the dumbbells straight up overhead until your elbows are almost fully extended. Lower the dumbbells slowly and with full control to ear/shoulder height, keeping your torso stable.",
+      "tags": [
+        "siłownia",
+        "barki",
+        "triceps",
+        "klatka",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-08T17:38:00.000Z",
+      "updatedAt": "2026-11-08T17:38:00.000Z"
+    }
+  ]
 }
