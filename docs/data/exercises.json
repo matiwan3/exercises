@@ -488,6 +488,150 @@
       "gif": null,
       "createdAt": "2026-11-08T17:38:00.000Z",
       "updatedAt": "2026-11-08T17:38:00.000Z"
+    },
+    {
+      "id": "negatywne-podciaganie",
+      "name": "Negatywne podciąganie",
+      "nameEn": "Bar Negative Pull-Up",
+      "description": "Wyskocz lub wejdź po podwyższeniu nad drążek, tak aby broda była nad drążkiem. Powoli i w pełnej kontroli opuszczaj ciało do pełnego wyprostu ramion (tempo 4–5 sekund).",
+      "descriptionEn": "Jump or step up onto a platform above the bar so that your chin is over the bar. Slowly and with full control lower your body to full arm extension (4–5 second tempo).",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "biceps",
+        "przedramiona",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:27:17.000Z",
+      "updatedAt": "2026-11-09T16:27:17.000Z"
+    },
+    {
+      "id": "podciaganie-z-guma-oporowa",
+      "name": "Podciąganie z gumą oporową",
+      "nameEn": "Banded Pull-Up",
+      "description": "Zaczep gumę oporową o drążek i umieść w niej stopę lub kolano. Zawiśnij na drążku nachwytem i pociągnij ciało w górę, aż broda znajdzie się nad drążkiem, wykorzystując asystę gumy. Powoli opuść się do dołu.",
+      "descriptionEn": "Attach a resistance band to the bar and place your foot or knee in it. Hang from the bar with an overhand grip and pull your body up until your chin is over the bar, using the assistance of the band. Slowly lower yourself back down.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "biceps",
+        "przedramiona",
+        "brzuch"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:27:18.000Z",
+      "updatedAt": "2026-11-09T16:27:18.000Z"
+    },
+    {
+      "id": "zwis-na-drazku",
+      "name": "Zwis na drążku",
+      "nameEn": "Dead Hang",
+      "description": "Chwyć drążek nachwytem na szerokość barków i zawiśnij luźno ze stóp odebranych od ziemi. Utrzymuj stabilny chwyt, oddychaj spokojnie i wytrzymaj określony czas.",
+      "descriptionEn": "Grip the bar with an overhand grip at shoulder width and hang loosely with your feet off the ground. Keep a stable grip, breathe calmly and hold for the set time.",
+      "tags": [
+        "kalistenika",
+        "przedramiona",
+        "plecy",
+        "barki"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:27:19.000Z",
+      "updatedAt": "2026-11-09T16:27:19.000Z"
+    },
+    {
+      "id": "rozciaganie-klatki-i-plecow-na-drazku",
+      "name": "Rozciąganie klatki i pleców na drążku",
+      "nameEn": "Bar Chest & Lat Stretch",
+      "description": "Chwyć drążek szeroko (lub zaprzyj przedramiona na niskim drążku) i opuść biodra w dół/w tył, pozwalając klatce opadać w stronę podłogi. Odczujesz rozciąganie w klatce piersiowej, barkach i najszerszym grzbietu.",
+      "descriptionEn": "Grip the bar wide (or rest your forearms on a low bar) and lower your hips down/back, letting your chest drop toward the floor. You will feel a stretch in your chest, shoulders and latissimus muscles.",
+      "tags": [
+        "rozciąganie",
+        "klatka",
+        "plecy",
+        "barki"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:27:20.000Z",
+      "updatedAt": "2026-11-09T16:27:20.000Z"
+    },
+    {
+      "id": "wyciskanie-sztangi-na-lawce-poziomej",
+      "name": "Wyciskanie sztangi na ławce poziomej",
+      "nameEn": "Barbell Bench Press",
+      "description": "Połóż się na ławce, chwyć sztangę nieco szerzej niż szerokość barków. Opuść sztangę do środkowej części klatki, a następnie dynamicznie wypchnij w górę.",
+      "descriptionEn": "Lie on the bench and grip the bar slightly wider than shoulder width. Lower the bar to the middle of your chest, then press it up explosively.",
+      "tags": [
+        "siłownia",
+        "klatka",
+        "barki",
+        "triceps"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:38:38.000Z",
+      "updatedAt": "2026-11-09T16:38:38.000Z"
+    },
+    {
+      "id": "podciaganie-australijskie",
+      "name": "Podciąganie australijskie",
+      "nameEn": "Inverted Row",
+      "description": "Zawiśnij pod niskim drążkiem z piętami na ziemi. Przyciągaj klatkę do drążka, utrzymując proste ciało.",
+      "descriptionEn": "Hang under a low bar with your heels on the ground. Pull your chest to the bar, keeping your body straight.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "biceps",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:38:39.000Z",
+      "updatedAt": "2026-11-09T16:38:39.000Z"
+    },
+    {
+      "id": "aktywacja-lopatek-w-zwisie",
+      "name": "Aktywacja łopatek w zwisie",
+      "nameEn": "Scapular Pull-Up",
+      "description": "W zwisie na prostych rękach ściągaj same łopatki w dół i do siebie bez uginania łokci.",
+      "descriptionEn": "Hang with straight arms and pull only your shoulder blades down and together, without bending your elbows.",
+      "tags": [
+        "kalistenika",
+        "plecy",
+        "barki",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:38:40.000Z",
+      "updatedAt": "2026-11-09T16:38:40.000Z"
+    },
+    {
+      "id": "wznosy-nog-w-wiszeniu",
+      "name": "Wznosy nóg w wiszeniu",
+      "nameEn": "Hanging Leg Raise",
+      "description": "Zawiśnij na drążku i unoś proste lub ugięte nogi do wysokości klatki lub drążka.",
+      "descriptionEn": "Hang from the bar and raise your straight or bent legs to chest or bar height.",
+      "tags": [
+        "kalistenika",
+        "brzuch",
+        "przedramiona"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:38:41.000Z",
+      "updatedAt": "2026-11-09T16:38:41.000Z"
+    },
+    {
+      "id": "wyciskanie-zolnierskie",
+      "name": "Wyciskanie żołnierskie",
+      "nameEn": "Overhead Press (OHP)",
+      "description": "Wyciskanie sztangi nad głowę z pozycji stojącej z napiętym brzuchem i pośladkami.",
+      "descriptionEn": "Press the barbell overhead from a standing position with your abs and glutes braced.",
+      "tags": [
+        "siłownia",
+        "barki",
+        "triceps"
+      ],
+      "gif": null,
+      "createdAt": "2026-11-09T16:38:42.000Z",
+      "updatedAt": "2026-11-09T16:38:42.000Z"
     }
   ]
 }
