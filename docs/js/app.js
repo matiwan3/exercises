@@ -10,6 +10,8 @@ const I18N = {
     searchAria: 'Szukaj',
     sortAria: 'Sortowanie',
     tagsAria: 'Filtr tagów',
+    filterTags: 'Filtruj tagi',
+    clearTags: 'wyczyść',
     sort: { 'name-asc': 'Nazwa A–Z', 'name-desc': 'Nazwa Z–A', new: 'Najnowsze', old: 'Najstarsze' },
     noGif: 'brak GIF-a',
     empty: 'Brak ćwiczeń spełniających kryteria.',
@@ -29,6 +31,8 @@ const I18N = {
     searchAria: 'Search',
     sortAria: 'Sort',
     tagsAria: 'Tag filter',
+    filterTags: 'Filter tags',
+    clearTags: 'clear',
     sort: { 'name-asc': 'Name A–Z', 'name-desc': 'Name Z–A', new: 'Newest', old: 'Oldest' },
     noGif: 'no GIF',
     empty: 'No exercises match your criteria.',
@@ -49,7 +53,7 @@ const LINKS = [
 ];
 
 const $ = (id) => document.getElementById(id);
-const state = { all: [], tagDb: {}, q: '', tags: new Set(), sort: 'name-asc', lang: 'pl' };
+const state = { all: [], release: '', tagDb: {}, q: '', tags: new Set(), sort: 'name-asc', lang: 'pl' };
 const t = () => I18N[state.lang];
 
 // ---------- język ----------
@@ -112,6 +116,7 @@ function renderFooter() {
   for (const l of LINKS.filter((l) => l.url)) {
     parts.push(document.createTextNode(' | '), el('a', { href: l.url, textContent: t().links[l.key], target: '_blank', rel: 'noopener noreferrer' }));
   }
+  if (state.release) parts.push(document.createTextNode(' | '), el('span', { className: 'release', textContent: `v${state.release}` }));
   $('footerLinks').replaceChildren(...parts);
 }
 
@@ -125,7 +130,9 @@ function applyLang() {
   $('q').placeholder = L.search;
   $('q').setAttribute('aria-label', L.searchAria);
   $('sort').setAttribute('aria-label', L.sortAria);
-  $('tags').setAttribute('aria-label', L.tagsAria);
+  $('tagfilter').setAttribute('aria-label', L.tagsAria);
+  $('tagClear').textContent = L.clearTags;
+  tagListKey = ''; // przebuduj listę tagów w nowym języku
   for (const o of $('sort').options) o.textContent = L.sort[o.value];
   renderBanner();
   renderFooter();
@@ -189,9 +196,36 @@ function card(e) {
   return article;
 }
 
+// lista tagów z checkboxami (rozwijany box „Filtruj tagi”)
+let tagListKey = '';
+
+function buildTagList(all) {
+  $('tagList').replaceChildren(
+    ...all.map((tag) => {
+      const box = el('input', { type: 'checkbox', checked: state.tags.has(tag) });
+      box.dataset.tag = tag;
+      box.onchange = () => toggleTag(tag);
+      const pill = el('span', { className: 'tag static', textContent: tagLabel(tag) });
+      pill.dataset.c = tagColor(tag);
+      return el('label', { className: 'tagfilter-item' }, box, pill);
+    })
+  );
+}
+
+function syncTagList() {
+  for (const box of $('tagList').querySelectorAll('input')) box.checked = state.tags.has(box.dataset.tag);
+  $('tagfilterLabel').textContent = t().filterTags + (state.tags.size ? ` (${state.tags.size})` : '');
+  $('tagfilter').classList.toggle('has-selection', state.tags.size > 0);
+}
+
 function render() {
   const all = [...new Set(state.all.flatMap((e) => e.tags))].sort((a, b) => tagLabel(a).localeCompare(tagLabel(b), state.lang));
-  $('tags').replaceChildren(...all.map((tag) => tagBtn(tag, () => toggleTag(tag))));
+  const key = state.lang + '|' + all.join('|');
+  if (key !== tagListKey) {
+    tagListKey = key;
+    buildTagList(all); // przebudowa tylko przy zmianie języka/danych — checkbox zachowuje fokus
+  }
+  syncTagList();
 
   const list = visible();
   $('meta').replaceChildren(el('span', { textContent: t().count(list.length, state.all.length) }));
@@ -223,12 +257,18 @@ async function getJson(url) {
 async function init() {
   state.lang = detectLang();
   $('q').addEventListener('input', (e) => { state.q = e.target.value; render(); });
+  $('tagClear').addEventListener('click', () => { state.tags.clear(); render(); });
+  document.addEventListener('click', (e) => { if (!$('tagfilter').contains(e.target)) $('tagfilter').open = false; });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('tagfilter').open = false; });
   $('sort').addEventListener('change', (e) => { state.sort = e.target.value; render(); });
   $('lang').addEventListener('change', (e) => setLang(e.target.checked ? 'en' : 'pl'));
   window.addEventListener('hashchange', focusFromHash);
   applyLang();
   try {
-    state.all = (await getJson('data/exercises.json')).exercises || [];
+    const data = await getJson('data/exercises.json');
+    state.all = data.exercises || [];
+    state.release = data.release || '';
+    renderFooter();
     state.tagDb = (await getJson('data/tags.json').catch(() => ({}))).tags || {};
     render();
     focusFromHash();

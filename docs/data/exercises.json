@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "release": "1.0",
   "exercises": [
     {
       "id": "krazenia-ramion-i-nadgarstkow",
@@ -18,7 +19,7 @@
     },
     {
       "id": "odciaganie-gumy-band-pull-aparts",
-      "name": "Odciąganie gumy (Band Pull-Aparts)",
+      "name": "Odciąganie gumy",
       "nameEn": "Band Pull-Arounds / Band Pull-Aparts",
       "description": "Chwyć gumę nachwytem na szerokość barków z ramionami wyprostowanymi przed klatką piersiową. Rozciągaj gumę na boki do momentu dotknięcia klatki piersiowej, mocno ściągając łopatki do siebie. Kontroluj ruch powrotny, utrzymując ciągłe napięcie gumy i stabilny tułów.",
       "descriptionEn": "Hold the band with an overhand grip at shoulder width, arms extended in front of your chest. Pull the band apart to the sides until it touches your chest, squeezing your shoulder blades together hard. Control the return, keeping constant tension on the band and a stable torso.",
@@ -33,7 +34,7 @@
     },
     {
       "id": "wiszenie-w-chwycie-glebokim-false-grip",
-      "name": "Wiszenie w chwycie głębokim (False Grip)",
+      "name": "Wiszenie w chwycie głębokim",
       "nameEn": "False Grip Hanging",
       "description": "Załóż nadgarstki głęboko na drążek tak, aby podstawa dłoni spoczywała na jego górnej powierzchni. Zawiśnij z wyprostowanymi lub lekko ugiętymi ramionami, utrzymując aktywne łopatki i mocne zgięcie w nadgarstkach. Utrzymuj pozycję przez określony czas, budując siłę chwytu kluczową do przejścia w Muscle Up.",
       "descriptionEn": "Hook your wrists deep over the bar so that the base of your palm rests on its top surface. Hang with straight or slightly bent arms, keeping your shoulder blades active and your wrists strongly flexed. Hold the position for a set time, building the grip strength essential for the transition into a Muscle Up.",
@@ -66,7 +67,7 @@
     },
     {
       "id": "pompki-na-drazku-prostym-bar-dips",
-      "name": "Pompki na drążku prostym (Bar Dips)",
+      "name": "Pompki na drążku prostym",
       "nameEn": "Bar Dips",
       "description": "Rozpocznij w pełnym podporze na drążku z wyprostowanymi ramionami i tułowiem lekko pochylonym do przodu. Zginaj ramiona w łokciach, opuszczając klatkę piersiową tuż nad drążek i pilnując, by łokcie nie uciekały nadmiernie na boki. Wypchnij się dynamicznie w górę, w pełni prostując ramiona i stabilizując korpus.",
       "descriptionEn": "Start in a full support on the bar with arms straight and your torso leaning slightly forward. Bend your elbows, lowering your chest just above the bar and making sure your elbows don't flare out excessively. Press up explosively, fully extending your arms and stabilizing your core.",
@@ -214,7 +215,7 @@
     },
     {
       "id": "deska-klasyczna-plank",
-      "name": "Deska klasyczna (Plank)",
+      "name": "Deska klasyczna",
       "nameEn": "Plank",
       "description": "Oprzyj się na przedramionach i palcach stóp, ustawiając łokcie bezpośrednio pod barkami. Zepnij mocno pośladki, podwiń miednicę pod siebie i wciągnij pępek ku kręgosłupowi, tworząc sztywną linię. Oddychaj równomiernie i unikaj wyginania odcinka lędźwiowego w dół oraz unoszenia bioder.",
       "descriptionEn": "Rest on your forearms and toes with your elbows directly under your shoulders. Squeeze your glutes hard, tuck your pelvis and draw your navel toward your spine, creating a rigid line. Breathe evenly and avoid arching your lower back downward or raising your hips.",
@@ -247,7 +248,7 @@
     },
     {
       "id": "pozycja-dziecka-balasana",
-      "name": "Pozycja dziecka (Balasana)",
+      "name": "Pozycja dziecka",
       "nameEn": "Child's Pose",
       "description": "Uklęknij na macie, złącz duże palce stóp i rozszerz kolana na szerokość bioder. Usiądź pośladkami na piętach, wyciągnij wyprostowane ramiona daleko przed siebie na podłodze i oprzyj czoło o matę. Oddychaj głęboko do brzucha i dolnych żeber, pozwalając kręgosłupowi na swobodne wydłużenie i odprężenie.",
       "descriptionEn": "Kneel on the mat, bring your big toes together and spread your knees to hip width. Sit your glutes back on your heels, stretch your straight arms far in front of you on the floor and rest your forehead on the mat. Breathe deeply into your belly and lower ribs, letting your spine lengthen and relax freely.",
@@ -263,7 +264,7 @@
     },
     {
       "id": "pozycja-kobry-bhujangasana",
-      "name": "Pozycja kobry (Bhujangasana)",
+      "name": "Pozycja kobry",
       "nameEn": "Cobra Pose",
       "description": "Połóż się na brzuchu z nogami wyprostowanymi i dłońmi ułożonymi płasko pod barkami. Wciskając miednicę i grzbiety stóp w podłoże, unieś klatkę piersiową w górę siłą pleców oraz delikatnym odepchnięciem dłońmi. Opuść barki daleko od uszu, ściągnij łopatki i patrz przed siebie, nie forsując odcinka lędźwiowego.",
       "descriptionEn": "Lie on your stomach with your legs straight and your palms flat under your shoulders. Pressing your pelvis and the tops of your feet into the floor, lift your chest using your back strength and a gentle push of your hands. Keep your shoulders away from your ears, draw your shoulder blades together and look ahead, without forcing your lower back.",
@@ -363,7 +364,7 @@
     },
     {
       "id": "pompki-w-staniu-na-rekach-hspu",
-      "name": "Pompki w staniu na rękach (HSPU)",
+      "name": "Pompki w staniu na rękach",
       "nameEn": "Handstand Push-Up (HSPU)",
       "description": "Przyjmij pozycję stania na rękach przy ścianie z dłońmi rozstawionymi nieco szerzej niż barki. Powoli zginaj ramiona w łokciach, kontrolując opuszczanie głowy przed linię dłoni aż do delikatnego dotknięcia podłoża. Wypchnij się potężnym ruchem w górę do pełnego zablokowania łokci i aktywnego wypchnięcia barków.",
       "descriptionEn": "Take a handstand position against the wall with your hands slightly wider than your shoulders. Slowly bend your elbows, controlling the lowering of your head in front of the line of your hands until it lightly touches the floor. Press up with a powerful movement to full elbow lockout and actively pushed-up shoulders.",
@@ -396,7 +397,7 @@
     },
     {
       "id": "przysiad-bulgarski-bss",
-      "name": "Przysiad bułgarski (BSS)",
+      "name": "Przysiad bułgarski",
       "nameEn": "Bulgarian Split Squat (BSS)",
       "description": "Stań w wykroku tyłem do ławeczki i oprzyj grzbiet jednej stopy na jej krawędzi. Obniżaj biodra pionowo w dół, zginając przednią nogę w kolanie do kąta około 90 stopni, zachowując tułów stabilny i lekko pochylony. Odepchnij się z całej przedniej stopy (ze szczególnym naciskiem na piętę) z powrotem w górę.",
       "descriptionEn": "Stand in a lunge position facing away from a bench and rest the top of one foot on its edge. Lower your hips straight down, bending the front knee to about 90 degrees, keeping your torso stable and slightly leaning forward. Push through the whole front foot (with special emphasis on the heel) back up.",
@@ -411,7 +412,7 @@
     },
     {
       "id": "rumunski-martwy-ciag-rdl",
-      "name": "Rumuński martwy ciąg (RDL)",
+      "name": "Rumuński martwy ciąg",
       "nameEn": "Romanian Deadlift (RDL)",
       "description": "Stań ze stopami na szerokość bioder trzymając sztangę nachwytem przed udami. Przy lekko ugiętych kolanach wypychaj biodra daleko w tył, prowadząc gryf tuż przy nogach aż do wyczucia mocnego rozciągania w tyle ud. Ściśnij pośladki i pchnij biodra do przodu, wracając do pozycji wyprostowanej bez przeprostu w lędźwiach.",
       "descriptionEn": "Stand with your feet hip-width apart, holding a barbell with an overhand grip in front of your thighs. With slightly bent knees, push your hips far back, guiding the bar close to your legs until you feel a strong stretch in the back of your thighs. Squeeze your glutes and drive your hips forward, returning to standing without hyperextending your lower back.",

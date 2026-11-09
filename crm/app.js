@@ -19,6 +19,7 @@ const T = {
   gifOnly: 'Dozwolony jest tylko format GIF',
   tagsSaved: 'Tłumaczenia tagów zapisane',
   noTranslation: 'brak tłumaczenia',
+  listTitle: (shown, total) => (shown === total ? `Lista ćwiczeń (${total})` : `Lista ćwiczeń (${shown} z ${total})`),
   linkCopied: 'Link skopiowany: ',
 };
 
@@ -125,6 +126,7 @@ function renderList() {
     .filter((e) => !q || `${e.name} ${e.tags.join(' ')}`.toLowerCase().includes(q))
     .sort((a, b) => a.name.localeCompare(b.name, 'pl'));
 
+  $('listTitle').textContent = T.listTitle(items.length, state.items.length);
   $('list').replaceChildren(
     ...(items.length
       ? items.map((e) => {
@@ -180,7 +182,9 @@ function select(id) {
   state.selected = id;
   renderForm();
   renderList();
-  $('name').focus();
+  // lista jest pod formularzem — przewiń do formularza, żeby nie szukać go ręcznie
+  $('panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('name').focus({ preventScroll: true });
 }
 
 async function remove(e) {
@@ -287,7 +291,13 @@ $('saveTags').addEventListener('click', async () => {
 
 $('tags').addEventListener('input', renderTagSuggestions);
 $('q').addEventListener('input', (e) => { state.q = e.target.value; renderList(); });
-$('new').addEventListener('click', () => { state.selected = null; renderForm(); renderList(); $('name').focus(); });
+$('new').addEventListener('click', () => {
+  state.selected = null;
+  renderForm();
+  renderList();
+  $('panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('name').focus({ preventScroll: true });
+});
 $('cancel').addEventListener('click', () => { state.selected = null; renderForm(); renderList(); });
 
 load().then(renderForm).catch((e) => toast(e.message, true));

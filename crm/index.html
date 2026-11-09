@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="crm">
   <header class="hero wrap">
     <h1>CRM <span>ćwiczeń</span></h1>
     <p>Dodawaj, edytuj i usuwaj ćwiczenia. Zmiany zapisują się w <code>docs/data/exercises.json</code> — potem zrób commit i push.</p>
@@ -17,60 +17,65 @@
 
   <main class="wrap">
     <div class="controls">
-      <input type="search" id="q" placeholder="Szukaj…" aria-label="Szukaj">
+      <input type="search" id="q" placeholder="Szukaj w liście ćwiczeń…" aria-label="Szukaj">
       <button class="btn" id="new" type="button">+ Nowe ćwiczenie</button>
     </div>
 
-    <div class="crm-layout">
-      <div>
-        <div class="list" id="list"></div>
-        <section class="panel flat" id="tagPanel">
-          <h2>Tagi — tłumaczenia EN</h2>
-          <p class="hint">Angielska wersja strony pokazuje te nazwy tagów. Kolor tagu jest stały i przydzielany automatycznie.</p>
-          <div id="tagRows"></div>
-          <button class="btn" id="saveTags" type="button">Zapisz tłumaczenia</button>
-        </section>
-      </div>
-
-      <aside class="panel" id="panel">
-        <h2 id="formTitle">Nowe ćwiczenie</h2>
-        <form id="form" autocomplete="off">
-          <div class="field">
-            <label for="name">Nazwa *</label>
-            <input type="text" id="name" required maxlength="120">
-          </div>
-          <div class="field">
-            <label for="description">Opis</label>
-            <textarea id="description"></textarea>
-          </div>
-          <div class="field">
-            <label for="nameEn">Nazwa (EN)</label>
-            <input type="text" id="nameEn" maxlength="120">
-          </div>
-          <div class="field">
-            <label for="descriptionEn">Opis (EN)</label>
-            <textarea id="descriptionEn"></textarea>
-          </div>
-          <div class="field">
-            <label for="tags">Tagi (po przecinku)</label>
-            <input type="text" id="tags" list="tagSuggestions" placeholder="np. plecy, hantle, początkujący">
-            <datalist id="tagSuggestions"></datalist>
-            <div class="tags" id="tagPicker"></div>
-          </div>
-          <div class="field" id="gifField">
-            <label for="gif">GIF</label>
+    <!-- 1. Formularz dodawania / edycji (zaraz pod wyszukiwarką) -->
+    <section class="panel" id="panel">
+      <h2 id="formTitle">Nowe ćwiczenie</h2>
+      <form id="form" class="form-grid" autocomplete="off">
+        <div class="field">
+          <label for="name">Nazwa *</label>
+          <input type="text" id="name" required maxlength="120">
+        </div>
+        <div class="field">
+          <label for="nameEn">Nazwa (EN)</label>
+          <input type="text" id="nameEn" maxlength="120">
+        </div>
+        <div class="field">
+          <label for="description">Opis</label>
+          <textarea id="description"></textarea>
+        </div>
+        <div class="field">
+          <label for="descriptionEn">Opis (EN)</label>
+          <textarea id="descriptionEn"></textarea>
+        </div>
+        <div class="field span">
+          <label for="tags">Tagi (po przecinku)</label>
+          <input type="text" id="tags" list="tagSuggestions" placeholder="np. plecy, hantle, początkujący">
+          <datalist id="tagSuggestions"></datalist>
+          <div class="tags" id="tagPicker"></div>
+        </div>
+        <div class="field span" id="gifField">
+          <label for="gif">GIF</label>
+          <div class="gif-row">
             <div class="gif-preview" id="gifPreview" hidden><img alt=""></div>
-            <input type="file" id="gif" accept="image/gif">
-            <p class="hint" id="gifHint">Najpierw zapisz ćwiczenie, potem możesz dodać GIF.</p>
-            <div class="row"><button class="btn danger small" id="gifRemove" type="button" hidden>Usuń GIF</button></div>
+            <div class="gif-controls">
+              <input type="file" id="gif" accept="image/gif">
+              <p class="hint" id="gifHint">Najpierw zapisz ćwiczenie, potem możesz dodać GIF.</p>
+              <div class="row"><button class="btn danger small" id="gifRemove" type="button" hidden>Usuń GIF</button></div>
+            </div>
           </div>
-          <div class="row">
-            <button class="btn" type="submit" id="save">Zapisz</button>
-            <button class="btn ghost" type="button" id="cancel">Wyczyść</button>
-          </div>
-        </form>
-      </aside>
-    </div>
+        </div>
+        <div class="row span">
+          <button class="btn" type="submit" id="save">Zapisz</button>
+          <button class="btn ghost" type="button" id="cancel">Wyczyść</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. Lista ćwiczeń (pod formularzem) -->
+    <h2 class="section-title" id="listTitle">Lista ćwiczeń</h2>
+    <div class="list" id="list"></div>
+
+    <!-- 3. Tłumaczenia tagów -->
+    <section class="panel" id="tagPanel">
+      <h2>Tagi — tłumaczenia EN</h2>
+      <p class="hint">Angielska wersja strony pokazuje te nazwy tagów. Kolor tagu jest stały i przydzielany automatycznie.</p>
+      <div id="tagRows"></div>
+      <button class="btn" id="saveTags" type="button">Zapisz tłumaczenia</button>
+    </section>
   </main>
 
   <div class="toast" id="toast"></div>

@@ -15,15 +15,16 @@
 Wejście: tabela od użytkownika — nazwa PL, nazwa EN, kategoria, partie, opis (czasem sprzęt). Kroki:
 
 1. **Zapisz do `docs/data/exercises.json`** (format: JSON z wcięciem 2 spacje, polskie znaki bez escapowania). Nie wymyślaj ćwiczeń ani opisów, o które użytkownik nie prosił.
-2. **`id`** = slug polskiej nazwy tak jak `slugify` w `crm/server.js` (małe litery, `ł`→`l`, bez diakrytyków, myślniki), unikalny. Nigdy nie zmieniaj `id` istniejącego ćwiczenia (psuje linki).
-3. **Tagi** = kategoria + partie, małymi literami, **wyłącznie z dozwolonych list**:
+2. **Nazwa PL (`name`) jest czysto polska** — bez angielskich dopisków, skrótów ani obcych nazw w nawiasach (np. „Deska klasyczna”, nie „Deska klasyczna (Plank)”). Angielska nazwa trafia tylko do `nameEn`. Każde ćwiczenie jest albo po polsku, albo po angielsku (przełącznik PL/EN), nigdy mieszane.
+3. **`id`** = slug polskiej nazwy tak jak `slugify` w `crm/server.js` (małe litery, `ł`→`l`, bez diakrytyków, myślniki), unikalny. Nigdy nie zmieniaj `id` istniejącego ćwiczenia (psuje linki).
+4. **Tagi** = kategoria + partie, małymi literami, **wyłącznie z dozwolonych list**:
    - Kategorie: `kalistenika`, `siłownia`, `rozgrzewka`, `rozciąganie`.
    - Partie: `klatka`, `plecy`, `barki`, `biceps`, `triceps`, `brzuch`, `uda`, `pośladki`, `przedramiona`.
    - Nowy tag to wyjątek — najpierw zapytaj. Wymaga wpisu w `docs/data/tags.json` (tłumaczenie `en` + `color` = najrzadziej używany indeks 0–12).
-4. **EN:** `nameEn` z tabeli; `descriptionEn` przetłumacz sam (naturalny, prosty angielski). Języki się nie mieszają.
-5. **Opis PL** wklej wiernie; popraw tylko oczywiste literówki i **zgłoś to użytkownikowi**.
-6. `gif: null` (użytkownik wgrywa GIF w CRM), `createdAt`/`updatedAt` = teraz (ISO), rosnąco co 1 s w kolejności z tabeli.
-7. Sprawdź duplikaty (po `name` i `nameEn`) i poprawność JSON-a.
+5. **EN:** `nameEn` z tabeli; `descriptionEn` przetłumacz sam (naturalny, prosty angielski). Języki się nie mieszają.
+6. **Opis PL** wklej wiernie; popraw tylko oczywiste literówki i **zgłoś to użytkownikowi**.
+7. `gif: null` (użytkownik wgrywa GIF w CRM), `createdAt`/`updatedAt` = teraz (ISO), rosnąco co 1 s w kolejności z tabeli.
+8. Sprawdź duplikaty (po `name` i `nameEn`) i poprawność JSON-a.
 8. Na koniec podaj listę dodanych ćwiczeń z linkami `#id`.
 
 ## 0.2 Tworzenie planów treningowych (workflow Claude)
@@ -89,6 +90,7 @@ CRM (lokalny panel)  →  lekka baza (pliki w gicie)  →  statyczna strona (Git
 ### Zasady implementacji
 - W pełni natywny: czysty Node.js (>=18) + vanilla HTML/CSS/JS. **Bez zależności npm, bez frameworków, bez builda.**
 - Prosty, interaktywny, łatwe dodawanie i usuwanie ćwiczeń (edycja też).
+- **Układ panelu: jedna kolumna, od góry:** wyszukiwarka + „Nowe ćwiczenie” → formularz dodawania/edycji (pola PL i EN obok siebie, tagi, GIF) → lista ćwiczeń → tłumaczenia tagów. Bez bocznej, przyklejonej sekcji — formularz jest zawsze pod ręką, a „Edytuj” na liście przewija do niego.
 - Działa wyłącznie lokalnie (`npm run crm` → http://localhost:4000, nasłuch tylko na 127.0.0.1). Nie jest publikowany.
 - Zapisuje bezpośrednio do bazy; publikacja = `git commit` + `git push`.
 - Upload GIF-a: tylko pliki GIF (sprawdzane po magic bytes), limit 15 MB.
@@ -106,10 +108,11 @@ CRM (lokalny panel)  →  lekka baza (pliki w gicie)  →  statyczna strona (Git
 ## 4. Statyczna strona (`docs/`)
 - Hostowana na GitHub Pages z folderu `/docs` gałęzi `main` — https://matiwan3.github.io/exercises/.
 - Czyta `data/exercises.json` i `data/tags.json` w przeglądarce — bez backendu.
-- Lista ćwiczeń z GIF-ami, **wyszukiwaniem, filtrowaniem po tagach (AND) i sortowaniem** (nazwa A–Z/Z–A, najnowsze/najstarsze).
+- Lista ćwiczeń z GIF-ami. Nad listą **dwa boxy**: „Szukaj ćwiczenia…” oraz „Filtruj tagi” (rozwijana lista z checkboxami, kolorowe pigułki; wiele tagów naraz = AND; etykieta pokazuje liczbę zaznaczonych). Brak osobnego rzędu tagów pod boxami. Sortowanie (nazwa A–Z/Z–A, najnowsze/najstarsze) to mała lista w linii „Wyświetlono X z Y”. Tagi na kartach ćwiczeń nadal są klikalne i zaznaczają ten sam filtr.
 - Wygląd: **jasny motyw** („premium”): lekko szare tło strony (`--bg` #f0f0f0), czarny tekst, koralowy akcent (`#ff4d55`), font nagłówków Anton.
 - Ćwiczenia jako kontenery na całą szerokość, jeden pod drugim: szare tło (`--card`, #d9d9d9), lekko zaokrąglone rogi, po lewej GIF (białe pole), po prawej pogrubiona nazwa, opis wyjustowany i kolorowe tagi (czarny tekst).
 - Kolory tagów: paleta 13 odrębnych kolorów `--tag-0..12` w CSS; indeks koloru każdego tagu jest w `docs/data/tags.json` (strona i CRM czytają to samo). Awaryjnie (brak wpisu) kolor z hasha nazwy.
+- **Wersja bazy:** pole `release` w `exercises.json` (np. `"1.0"`) wyświetla się w stopce jako `v1.0`. CRM je zachowuje, ale nie zmienia — podbijaj ręcznie przy publikacji zmian w treści: dodanie/zmiana ćwiczeń → druga cyfra (1.1, 1.2…), zmiana struktury/schematu → pierwsza (2.0).
 - Nagłówek strony: grafika `docs/img/page_header.png` (przezroczysta, czarny napis) wprost na tle strony (`.banner`). Grafiki muszą leżeć w `docs/`, inaczej Pages ich nie opublikuje.
 - **Ujednolicone kolory i fonty:** wszystkie w tokenach CSS na górze `docs/css/style.css` (`--accent`, `--highlight`, `--font-display`, …). Strona i CRM używają tego samego pliku — nie wpisuj kolorów/fontów gdzie indziej.
 - **Dwie wersje językowe (PL / EN):** jeden przełącznik (suwak) w prawym górnym rogu; wybór zapamiętany w `localStorage` i w `?lang=pl|en`. Języki się nie mieszają — cały interfejs (obiekt `I18N` na górze `docs/js/app.js`), treści ćwiczeń i nazwy tagów są w wybranym języku. Gdy brakuje tłumaczenia ćwiczenia lub tagu, strona pokazuje wersję polską. Nagłówek PL to grafika, EN to tekst w tym samym stylu (grafika jest po polsku).

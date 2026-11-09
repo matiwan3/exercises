@@ -28,15 +28,23 @@
   <main class="wrap">
     <div class="controls">
       <input type="search" id="q" placeholder="Szukaj ćwiczenia…" aria-label="Szukaj">
-      <select id="sort" aria-label="Sortowanie">
+      <details class="tagfilter" id="tagfilter">
+        <summary id="tagfilterLabel">Filtruj tagi</summary>
+        <div class="tagfilter-panel">
+          <div class="tagfilter-list" id="tagList"></div>
+          <button class="tagfilter-clear" id="tagClear" type="button">wyczyść</button>
+        </div>
+      </details>
+    </div>
+    <div class="meta-row">
+      <div class="meta" id="meta"></div>
+      <select id="sort" class="sort-inline" aria-label="Sortowanie">
         <option value="name-asc">Nazwa A–Z</option>
         <option value="name-desc">Nazwa Z–A</option>
         <option value="new">Najnowsze</option>
         <option value="old">Najstarsze</option>
       </select>
     </div>
-    <div class="tags" id="tags" aria-label="Filtr tagów"></div>
-    <div class="meta" id="meta"></div>
     <div class="grid" id="grid"></div>
   </main>
 
