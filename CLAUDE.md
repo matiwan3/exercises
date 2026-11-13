@@ -27,47 +27,11 @@ Wejście: tabela od użytkownika — nazwa PL, nazwa EN, kategoria, partie, opis
 8. Sprawdź duplikaty (po `name` i `nameEn`) i poprawność JSON-a.
 8. Na koniec podaj listę dodanych ćwiczeń z linkami `#id`.
 
-## 0.2 Tworzenie planów treningowych (workflow Claude)
+## 0.2 Tworzenie planów treningowych
 
-**Obowiązkowa struktura każdego planu:**
+**Wszystkie zasady są w skillu `plan-treningowy`** (`.claude/skills/plan-treningowy/SKILL.md`, wywołanie: `/plan-treningowy` lub po prostu prośba o plan/trening). Skill obejmuje: standard językowy PL, dopasowanie do ćwiczeń z bazy (dokładnie istniejące), procedurę dla brakujących ćwiczeń (najpierw lista do akceptacji, potem dodanie), optymalizację planu względem szkicu, strukturę, linki `#id`, stopkę i disclaimer, raport zmian oraz format wyzwania 30-dniowego. Przy zmianie zasad edytuj skill, nie duplikuj ich tutaj.
 
-- **Nagłówek:** tytuł planu, czas trwania, partie ciała, częstotliwość.
-- **Rozgrzewka:** krótkie ćwiczenia mobilizujące i aktywacyjne.
-- **Trening główny:** ćwiczenia właściwe, serie, powtórzenia/czas, wskazówki.
-- **Rozciąganie:** ćwiczenia wyciszające i poprawiające mobilność.
-
-**Zasady:**
-
-- Każde ćwiczenie w planie **musi istnieć w bazie**. Nazwa PL dokładnie jak w bazie, z hiperłączem `https://matiwan3.github.io/exercises/#<id>`. Brakujące ćwiczenia zaproponuj dodać do bazy przed publikacją planu.
-- Zapis serii: `Nazwa: 4x 3-5`, czasy: `2 x 30 sekund`, `30 sekund (na stronę)`. Ważne uwagi jako osobna linia, np. „Po każdym ćwiczeniu 1 minuta przerwy”.
-- Stopka planu: „Zastanawiasz się jak zrobić konkretne ćwiczenie? Sprawdź bazę ćwiczeń (link) lub kliknij na wybrane ćwiczenie powyżej”, potem disclaimer („Plan ma charakter wyłącznie informacyjny i edukacyjny. Przed rozpoczęciem treningu upewnij się, że nie masz przeciwwskazań zdrowotnych. Wszystkie ćwiczenia wykonujesz na własną odpowiedzialność. Obciążenie należy dobrać indywidualnie do możliwości i stażu treningowego.”) i `© 2026 @matiwann`.
-- Wygląd dotychczasowych PDF-ów: grafika nagłówka „PLAN TRENINGOWY <nazwa>” (czarny napis, koralowy akcent), sekcje w kolorze koralowym, serie/czasy pogrubione.
-- Format wyjściowy: domyślnie Markdown w czacie z działającymi linkami; PDF/DOCX tylko na prośbę.
-
-**Wzorzec planu (przykład):**
-
-> ### PLAN TRENINGOWY: PIERWSZE PODCIĄGNIĘCIE
-> - **Czas trwania:** 45 minut
-> - **Partie ciała:** Plecy, Biceps, Przedramiona, Brzuch
-> - **Częstotliwość:** 2–3 razy w tygodniu (minimum 48h przerwy między sesjami)
->
-> **Rozgrzewka**
-> - Krążenia ramion i nadgarstków – 1 minuta
-> - Aktywacja łopatek w zwisie – 2 serie po 8–10 powtórzeń
-> - Odciąganie gumy – 2 serie po 15 powtórzeń
->
-> **Trening główny**
-> - Negatywne podciąganie – 4 serie po 3–5 powtórzeń *(wyskocz nad drążek i powoli opuszczaj się przez 4–5 sekund)*
-> - Podciąganie z gumą oporową LUB Podciąganie australijskie – 3 serie po 6–8 powtórzeń *(dobierz gumę lub kąt nachylenia tak, aby ostatnie 2 powtórzenia były wymagające)*
-> - Zwis na drążku – 3 serie po 30 sekund *(wzmocnienie chwytu i przedramion)*
-> - Deska klasyczna – 3 serie po 30–45 sekund
->
-> **Rozciąganie**
-> - Rozciąganie klatki i pleców na drążku – 30 sekund
-> - Rozciąganie tricepsa i najszerszego grzbietu – 30 sekund na stronę
-> - Rozciąganie zginaczy i prostowników nadgarstków – 30 sekund na rękę
-
-**Wyzwanie 30-dniowe (format codzienny):** 5 minut dziennie rano po przebudzeniu, 30 dni bez przerw, 3 fazy po 10 dni. Schemat dnia: 1 min rozgrzewka + 3 min trening główny + 1 min rozciąganie.
+**Opisy sprzedażowe produktów (Naffy)** w folderze `produkty/`: szablon `produkty/_szablon-opisu-produktu.md` (zasady stylu w jego nagłówku; wariant A — plan treningowy, wariant B — wyzwanie 30-dniowe), pliki produktów `produkt - <skrót>.md`, mail pozakupowy w `produkty/dodatki.md`.
 
 ## 1. Architektura
 
